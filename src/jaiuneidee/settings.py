@@ -55,7 +55,7 @@ ROOT_URLCONF = 'jaiuneidee.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['ideacrawler/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
