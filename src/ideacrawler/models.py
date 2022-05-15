@@ -10,3 +10,4 @@ class Idea(models.Model):
     pub_date : DateField = models.DateField('date published')
 
     # TODO: add tags
+

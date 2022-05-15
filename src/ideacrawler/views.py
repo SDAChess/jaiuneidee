@@ -6,3 +6,9 @@ def index(request):
     template = loader.get_template('ideacrawler/index.html')
     context = {}
     return HttpResponse(template.render(context, request))
+
+def idea(request, idea_id):
+    pass
+
+def submit(request):
+    pass
