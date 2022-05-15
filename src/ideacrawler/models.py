@@ -1,8 +1,6 @@
 from django.db import models
 from django.db.models.fields import CharField, DateField, IntegerField
 
-# Create your models here.
-
 class Idea(models.Model):
     title : CharField = models.CharField(max_length=80)
     upvotes : IntegerField = models.IntegerField(default=0)
