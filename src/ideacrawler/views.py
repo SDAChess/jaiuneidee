@@ -1,8 +1,5 @@
-from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
-from django.http import HttpResponse
-from django.shortcuts import redirect, render
-from django.template import loader
+from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.csrf import csrf_protect
 from ideacrawler.models import Idea
 
@@ -13,10 +10,8 @@ def crawler(request):
 
 
 def idea(request, idea_id):
-    # template = loader.get_template('ideacrawler/index.html')
-    # context = {}
-    # return HttpResponse(template.render(context, request))
-    pass
+    idea = get_object_or_404(Idea, idea_id)
+    return render(request, 'ideacrawler/idea.html', {'idea': idea})
 
 
 @csrf_protect
