@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path('ideas', include('ideacrawler.urls')),
-    path('publish', include('ideapublisher.urls')),
+    path('', include('ideacrawler.urls')),
+    path('submit/', include('ideapublisher.urls')),
     path('admin/', admin.site.urls),
 ]
