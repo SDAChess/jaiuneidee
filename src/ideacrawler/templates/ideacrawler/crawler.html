@@ -4,24 +4,34 @@
 
 {% block content %}
 
-<div class="d-flex justify-content-center">
+<div class="container d-flex flex-column justify-content-center">
 
-{% for idea in ideas %}
+    {% for idea in ideas %}
 
-<div class="card">
-    <div class="card-body">
-        <h2>{{idea.title}}</h2>
-        <p>{{idea.description}}</p>
-        <div class="d-flex flex-row align-items-center my-auto">
-            <h3 class="mb-0 pr-2">{{idea.upvotes}}</h4>
-            <span style='cursor: pointer;'>
-                <i class="fas fa-2xl fa-caret-up"/></i>
+    <div class="w-100 card m-1">
+        <div class="card-body">
+            <h2>{{idea.title}}</h2>
+            <p>{{idea.description}}</p>
+            <div class="d-flex flex-row align-items-center my-auto">
+                <h3 class="mb-0 pr-2">{{idea.upvotes}}</h3>
+                <span id="upvote-btn{{idea.id}}" style="cursor: pointer;">
+                <i class="fas fa-xl fa-caret-up"></i>
             </span>
+            </div>
         </div>
     </div>
-</div>
 
-{% endfor %}
+    <script>
+        var id = "{{idea.id}}"
+        $(`#upvote-btn${id}`).click(function () {
+            // An empty POST request is sufficient to upvote
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", `/upvote/${id}`, true);
+            xhr.send();
+        });
+    </script>
+
+    {% endfor %}
 
 </div>
 
