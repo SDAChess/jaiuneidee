@@ -24,17 +24,23 @@
     </div>
 
     <script>
-        var id = "{{idea.id}}"
-        $(`#upvote-btn${id}`).click(function () {
-            // An empty POST request is sufficient to upvote
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", `/upvote/${id}`, true);
-            xhr.send();
+        $("#upvote-btn" + "{{idea.id}}").click(function (e) {
+            e.stopPropagation()
+            $.ajax({
+                url: '/idea/{{idea.id}}/upvote',
+                method: "POST",
+                headers: {'X-CSRFToken': '{{ csrf_token }}'},
+                data: null,
+                dataType: "json",
+                complete: () => {
+                    console.log('coucou');
+                    window.location.reload();
+                },
+            })
         });
 
-        $(`#detail-btn${id}`).click(function () {
-            console.log(`id: ${id}`);
-                    window.location = `/idea/{{idea.id}}`;
+        $('#detail-btn' + '{{idea.id}}').click(function () {
+            window.location = `/idea/{{idea.id}}`;
         });
     </script>
 

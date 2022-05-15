@@ -1,6 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
-from django.shortcuts import get_object_or_404, redirect, render
+from django.shortcuts import redirect, render
 from django.views.decorators.csrf import csrf_protect
+
 from ideacrawler.models import Idea
 
 
@@ -12,6 +13,14 @@ def crawler(request):
 def idea(request, idea_id):
     idea = Idea.objects.get(pk=idea_id)
     return render(request, 'ideacrawler/idea.html', {'idea': idea})
+
+
+def upvote(_, idea_id):
+    idea = Idea.objects.get(pk=idea_id)
+    idea.upvotes += 1
+    idea.save()
+
+    return redirect('/')
 
 
 @csrf_protect
