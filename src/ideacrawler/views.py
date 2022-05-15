@@ -8,7 +8,11 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 def idea(request, idea_id):
-    pass
+    #template = loader.get_template('ideacrawler/index.html')
+    #context = {}
+    #return HttpResponse(template.render(context, request))
 
 def submit(request):
-    pass
+    template = loader.get_template('ideacrawler/submit.html')
+    context = {}
+    return HttpResponse(template.render(context, request))
