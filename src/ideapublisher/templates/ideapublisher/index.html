@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block title %} Home {% endblock %}
 
@@ -12,15 +13,8 @@
 
     <div class="h-100 row align-items-center">
         <form class="container d-flex flex-column">
-            <div class="form-group">
-                <label for="idea">Idée</label>
-                <input type="text" class="form-control" id="idea">
-            </div>
-            <div class="form-group">
-                <label for="description">Description</label>
-                <textarea class="form-control" id="description" rows="5"
-                          maxlength="1000"></textarea>
-            </div>
+            {% csrf_token %}
+            {{ form|crispy }}
             <div class="align-self-end py-2">
                 <button type="submit" class="btn btn-primary">Envoyer</button>
             </div>

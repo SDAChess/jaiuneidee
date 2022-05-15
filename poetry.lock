@@ -38,6 +38,14 @@ python-versions = "*"
 django-excel-response2 = ">=3.0.0"
 
 [[package]]
+name = "django-crispy-forms"
+version = "1.14.0"
+description = "Best way to have Django DRY forms"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "django-excel-base"
 version = "1.0.4"
 description = "Django Excel Base"
@@ -113,7 +121,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "1f9d94cb7dde022e4830ef5426237447b0095c4100e4dd93706b4a3551c14df8"
+content-hash = "95efa84ecb0c727258416dd45322537ae906331a09b6d8515936e8fc493eeb0b"
 
 [metadata.files]
 asgiref = [
@@ -127,6 +135,10 @@ django = [
 django-admin = [
     {file = "django-admin-2.0.1.tar.gz", hash = "sha256:5c39d7a7614853425c11da2d9293748b104fe587f32bda2dd7ef56ab9ed7e61c"},
     {file = "django_admin-2.0.1-py2.py3-none-any.whl", hash = "sha256:63cfeb0d367488eb790b4a455dc9a5a64cc25f60060296c6d6e7fc0835c30cac"},
+]
+django-crispy-forms = [
+    {file = "django-crispy-forms-1.14.0.tar.gz", hash = "sha256:35887b8851a931374dd697207a8f56c57a9c5cb9dbf0b9fa54314da5666cea5b"},
+    {file = "django_crispy_forms-1.14.0-py3-none-any.whl", hash = "sha256:bc4d2037f6de602d39c0bc452ac3029d1f5d65e88458872cc4dbc01c3a400604"},
 ]
 django-excel-base = [
     {file = "django-excel-base-1.0.4.tar.gz", hash = "sha256:6f125ff049e706d36a84aff867be0db1d4e3ec837ed61be13e7488fa005269c6"},

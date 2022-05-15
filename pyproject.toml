@@ -9,6 +9,7 @@ license = "MIT"
 python = "^3.10"
 Django = "^4.0.4"
 django-admin = "^2.0.1"
+django-crispy-forms = "^1.14.0"
 
 [tool.poetry.dev-dependencies]
 

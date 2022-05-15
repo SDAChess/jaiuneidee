@@ -1,8 +1,15 @@
-from django.shortcuts import HttpResponse
-from django.template import loader
+from django.shortcuts import render
+
+from .forms import IdeaForm
 
 
 def index(request):
-    template = loader.get_template('ideapublisher/index.html')
-    context = {}
-    return HttpResponse(template.render(context, request))
+    if request.method == 'POST':
+        form = IdeaForm(request.POST)
+        if form.is_valid():
+            print(form.cleaned_data)
+    else:
+        form = IdeaForm()
+
+    context = {'form': form}
+    return render(request, 'ideapublisher/index.html', context)
