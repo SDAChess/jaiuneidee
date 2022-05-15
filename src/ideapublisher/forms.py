@@ -1,8 +1,11 @@
+from django.apps import apps
 from django import forms
 
+Idea = apps.get_model('ideacrawler', 'Idea')
 
-class IdeaForm(forms.Form):
-    idea = forms.CharField(
+
+class IdeaForm(forms.ModelForm):
+    title = forms.CharField(
         label='Mon idée',
         max_length='80'
     )
@@ -12,3 +15,7 @@ class IdeaForm(forms.Form):
         max_length='1024',
         required=False
     )
+
+    class Meta:
+        model = Idea
+        fields = ('title', 'description')
