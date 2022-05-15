@@ -9,7 +9,7 @@
         <h1 class="display-4"> Log In <i class="fas fa-globe-americas"></i></h1>
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form.as_table }}
             <button type="submit" class="btn btn-primary"> Log In </button>
         </form>
     </div>
