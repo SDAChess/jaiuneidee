@@ -10,7 +10,7 @@ def crawler(request):
 
 
 def idea(request, idea_id):
-    idea = get_object_or_404(Idea, idea_id)
+    idea = Idea.objects.get(pk=idea_id)
     return render(request, 'ideacrawler/idea.html', {'idea': idea})
 
 
