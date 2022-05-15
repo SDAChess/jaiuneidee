@@ -4,18 +4,25 @@
 
 {% block content %}
 
-<div classname="container">
+<div class="d-flex justify-content-center">
 
 {% for idea in ideas %}
 
-<div class="row card">
-    <div class="card-body w-30">
+<div class="w-50 card">
+    <div class="card-body">
         <h2>{{idea.title}}</h2>
         <p>{{idea.description}}</p>
+        <div class="d-flex flex-row align-items-center my-auto">
+            <h3 class="mb-0 pr-2">{{idea.upvotes}}</h4>
+            <span style='cursor: pointer;'>
+                <i class="fas fa-2xl fa-caret-up"/></i>
+            </span>
+        </div>
     </div>
 </div>
 
 {% endfor %}
 
 </div>
+
 {% endblock %}
