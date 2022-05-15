@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 from .forms import IdeaForm
 
@@ -7,7 +7,7 @@ def index(request):
     if request.method == 'POST':
         form = IdeaForm(request.POST)
         if form.is_valid():
-            print(form.cleaned_data)
+            return redirect('/')
     else:
         form = IdeaForm()
 

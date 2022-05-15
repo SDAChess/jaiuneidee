@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 
-{% block title %} Home {% endblock %}
+{% block title %} Idée {% endblock %}
 
 {% block content %}
 
@@ -12,7 +12,7 @@
     </h1>
 
     <div class="h-100 row align-items-center">
-        <form class="container d-flex flex-column">
+        <form method="post" class="container d-flex flex-column">
             {% csrf_token %}
             {{ form|crispy }}
             <div class="align-self-end py-2">
