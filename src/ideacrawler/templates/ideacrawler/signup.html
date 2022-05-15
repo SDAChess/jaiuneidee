@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 
-{% block title %} Sign Up {% endblock %}
+{% block title %} S'enregistrer {% endblock %}
 
 {% block content %}
 
 <div class="container">
     <div class="jumbotron">
-        <h1 class="display-4"> Sign Up <i class="fas fa-globe-americas"></i></h1>
+        <h1 class="display-4"> Créer un compte <i class="fas fa-globe-americas"></i></h1>
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" class="btn btn-primary"> Sign Up </button>
+            <button type="submit" class="btn btn-primary"> Créer un compte </button>
         </form>
     </div>
 </div>
