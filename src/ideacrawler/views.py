@@ -3,9 +3,9 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.csrf import csrf_protect
 from ideacrawler.models import Idea
 
+
 def crawler(request):
-    context = {}
-    context['ideas'] = Idea.objects.all()
+    context = {'ideas': Idea.objects.all()}
     return render(request, 'ideacrawler/crawler.html', context)
 
 
@@ -27,4 +27,3 @@ def signup(request):
     context = {'form': form}
 
     return render(request, 'ideacrawler/signup.html', context)
-
